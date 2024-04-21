@@ -24,6 +24,12 @@ builder.Services.AddScoped<IXMinerRepository, XMinerRepository>();
 builder.Services.AddScoped<IXMinerService, XMinerService>();
 builder.Services.AddScoped<IXMoveRepository, XMoveRepository>();
 builder.Services.AddScoped<IXMoveService, XMoveService>();
+builder.Services.AddScoped<IXRockRepository, XRockRepository>();
+builder.Services.AddScoped<IXRockService, XRockService>();
+builder.Services.AddScoped<IXItemRepository, XItemRepository>();
+builder.Services.AddScoped<IXItemService, XItemService>();
+builder.Services.AddScoped<IXToolRepository, XToolRepository>();
+builder.Services.AddScoped<IXToolService, XToolService>();
 builder.Services.AddScoped<IUserAccessor, UserAccessor>();
 
 builder.Services.AddDbContext<MineDbContext>(options =>

@@ -1,11 +1,17 @@
-﻿using Mine.Domain.Entities.XMine;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Microsoft.EntityFrameworkCore;
+using Mine.Domain.Entities.XMine;
+using Mine.Infrastructure.Data;
+using Mine.Infrastructure.Repositories;
 
 namespace Mine.Application.Contracts.Persistence.XMiner
 {
-    public interface XRockRepository: IXRockRepository
+    public class XRockRepository: AsyncRepository<XRockEntity>, IXRockRepository
     {
+        private readonly MineDbContext _mineDbContext;
+
+        public XRockRepository(MineDbContext dbContext) : base(dbContext)
+        {
+            _mineDbContext = dbContext;
+        }
     }
 }

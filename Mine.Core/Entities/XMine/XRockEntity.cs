@@ -5,6 +5,7 @@ namespace Mine.Domain.Entities.XMine
     public class XRockEntity
     {
         public Guid Id { get; set; }
+        public Guid MinerId { get; set; }
         public int Coins { get; set; }
         public int Item { get; set; }
         public int Tool { get; set; }

@@ -1,11 +1,9 @@
-﻿using Mine.Domain.Entities.XMine;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿using Mine.Application.DTOs;
+using Mine.Domain.Entities.XMine;
 namespace Mine.Application.Contracts.Persistence.XMiner
 {
     public interface IXItemRepository : IAsyncRepository<XItemEntity>
     {
+        Task<InventoryGetResponseDto> GetInventory(Guid xMinerId);
     }
 }

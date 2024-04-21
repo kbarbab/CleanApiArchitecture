@@ -1,11 +1,16 @@
 ﻿using Mine.Domain.Entities.XMine;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using Mine.Infrastructure.Data;
+using Mine.Infrastructure.Repositories;
 
 namespace Mine.Application.Contracts.Persistence.XMiner
 {
-    public interface XToolRepository: IXToolRepository
+    public class XToolRepository : AsyncRepository<XToolEntity>,  IXToolRepository
     {
+        private readonly MineDbContext _mineDbContext;
+
+        public XToolRepository(MineDbContext dbContext) : base(dbContext)
+        {
+            _mineDbContext = dbContext;
+        }
     }
 }
